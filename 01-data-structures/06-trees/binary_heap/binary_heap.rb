@@ -1,43 +1,25 @@
+
 require_relative 'node'
 
-class BinarySearchTree
+class BinaryHeap
 
   def initialize(root)
     @root = root
   end
 
   def insert(root, node)
-    if root == nil
-      return nil
-    elsif root.rating < node.rating && root.right == nil
-      root.right = node
 
-    elsif root.rating < node.rating && root.right != nil
-      root = root.right
-      insert(root,node)
-    elsif root.rating > node.rating && root.left == nil
+    temp = ""
+    if root.rating < node.rating && root.left == nil
       root.left = node
-
-    elsif root.rating > node.rating && root.left != nil
+    elsif root.rating < node.rating && root.left != nil && root.right == nil
+      root.right = node
       root = root.left
-      insert(root,node)
-    end
-  end
-
-  # Recursive Depth First Search
-  def find(root, data)
-    
-
-    if root.nil? || data.nil?
-      return nil
-    else
-      if root.title == data
-        return root
-      elsif root.left != nil
-        find(root.left, data)
-      elsif root.right != nil
-        find(root.right, data)
-      end
+    elsif root.rating > node.rating
+      temp = node
+      node = root
+      root = temp
+      insert(root, node)
     end
   end
 
@@ -54,8 +36,22 @@ class BinarySearchTree
     end
   end
 
-  # Recursive Breadth First Search
-  def printf(children=nil)
+  def find(root, data)
+    if root.nil? || data.nil?
+      return nil
+    else
+      if root.title == data
+        return root
+      elsif root.left != nil
+        find(root.left, data)
+      elsif root.right != nil
+        find(root.right, data)
+      end
+    end
+
+  end
+
+  def print
     children = []
     data = []
 
