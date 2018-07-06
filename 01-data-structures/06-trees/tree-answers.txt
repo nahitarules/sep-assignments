@@ -1,0 +1,20 @@
+inserting heap
+  0.040000   0.000000   0.040000 (  0.041382)
+finding 50000 in heap
+  0.000000   0.000000   0.000000 (  0.000008)
+deleting in heap
+  0.000000   0.000000   0.000000 (  0.000008)
+inserting binary search tree
+  0.410000   0.000000   0.410000 (  0.406692)
+finding 50000 in binary search tree
+  0.000000   0.000000   0.000000 (  0.000007)
+deleting in tree
+  0.000000   0.000000   0.000000 (  0.000007)
+
+Binary search trees can be used to sort a list faster since
+they are arranged from left to right rather than top to bottom.
+
+Binary heaps are faster to insert elements, heaps are also faster
+in finding min/max depending on what type they are, the other
+advantage of heaps over BSTs is that heaps can be efficiently
+implemented on top of arrays. 

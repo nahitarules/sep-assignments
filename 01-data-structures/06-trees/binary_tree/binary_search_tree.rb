@@ -26,7 +26,7 @@ class BinarySearchTree
 
   # Recursive Depth First Search
   def find(root, data)
-    
+
 
     if root.nil? || data.nil?
       return nil

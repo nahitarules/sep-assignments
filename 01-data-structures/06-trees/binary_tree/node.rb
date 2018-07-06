@@ -6,6 +6,6 @@ class Node
 
   def initialize(title, rating)
     @title = title
-    @rating = rating 
+    @rating = rating
   end
 end
